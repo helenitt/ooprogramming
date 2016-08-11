@@ -1,0 +1,8 @@
+Package - Class - Method
+Math - Math - Min
+
+i)    2 arguments
+ii)   float
+iii)  Returns the smaller of two float values
+iv)  float
+v)   System.out.println("The minimum value is" + Math.min(1.46f,2.56f));

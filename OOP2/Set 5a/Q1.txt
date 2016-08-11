@@ -1,0 +1,31 @@
+Q1	(i)	JMenuFrame is a sub class of JFrame
+	(ii)	It implements ActionListener
+	(iii)	The methids in this program are main,
+		setTitle     ("JMenuFrame");
+        	setSize      (300,200);
+        	setResizable (false);
+        	setLocation  (250,200);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		getContentPane( );
+        	setLayout(new FlowLayout());
+		createFileMenu();
+        	createEditMenu();
+		setJMenuBar(menuBar);
+        	setBackground(Color.yellow);
+       		add(fileMenu);
+        	exit(0);
+		addActionListener( this );
+		addSeparator();
+	(iv)	Creating  a JFrame, Creating a menu bar, creating menu items and editing all of the above.
+	(v)	A menubar is the strip that the menu sits in or on.
+	(vi)	No because its a drop down menu it is the menu item that generates the ActionEvent
+	(vii)	The program can't find symbol because once it is in the constructor it can only be seen 
+		within the constructor. It must be declared globally it be seen in the actionPerformed
+		method.
+	(viii)	The addActionListener method is called when you click on the menu item ‘Cut’ then 
+		actionPerformed does its stuff.
+	(ix)	Within the actionPerformed() method the ActionEvent class can use e.getActionCommand(),
+		getModifiers(), getWhen(), paramString().
+		It can inherit methods like setSource() from class java.awt.AWTEvent
+		It can inherit methods like getSource() from class java.util.EventObject
+		It can inherit methods like equals() from class java.lang.Object

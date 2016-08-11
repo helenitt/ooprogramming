@@ -1,0 +1,11 @@
+1 Prompt and read in number of coin tosses
+2 For loop set to number of coin tosses
+	2.1 call coinToss method
+		2.1.1 use random number method  - between 0-1
+		2.1.2 return result
+	2.2 count total for heads
+	2.3 count total for tails
+	2.4 display outcome for each toss
+3 End for loop
+4 Calculate and display percentage of heads to nearest whole number
+5 Calculate and display percentage for tails " 

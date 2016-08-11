@@ -1,0 +1,8 @@
+Ex 3   	 Dual-Pivot Quicksort by Vladimir Yaroslavskiy
+
+Ex 4     	copyOf(double[] original, int newLength)
+	Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
+	I think you have to specify the same length as the original
+
+Ex 5	 toString(char[] a)
+	Returns a string representation of the contents of the specified array.	

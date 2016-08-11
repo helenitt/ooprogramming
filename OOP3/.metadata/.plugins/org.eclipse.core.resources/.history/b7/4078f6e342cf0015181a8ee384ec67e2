@@ -1,0 +1,24 @@
+package q1;
+
+public class Train extends Vehicle {
+	private int numCarrage;
+	
+	public Train() {
+		super();
+		numCarrage = 0;
+	}
+	public Train(String mod, double pr, double lth, double wg, int numCar) {
+		super(mod, pr, lth, wg);
+		setNumCarrage(numCar);
+	}
+	
+	public int getNumCarrage() {
+		return numCarrage;
+	}
+	public void setNumCarrage(int numCar) {
+		numCarrage = numCar;
+	}
+	public String toString() {
+		return super.toString() + "\nCarrages: " + getNumCarrage();
+	}
+}

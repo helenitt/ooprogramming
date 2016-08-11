@@ -1,0 +1,8 @@
+java.io	Provides for system input and output through data streams, 
+	serialization and the file system
+
+java.net	Provides the classes for implementing networking applications
+
+java.sql	Provides the API for accessing and processing data stored in a 
+	data source (usually a relational database) using the JavaTM 
+	programming language	

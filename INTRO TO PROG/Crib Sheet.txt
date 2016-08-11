@@ -1,0 +1,25 @@
+\n 	new line
+\" 	quote \"
+\t 	horizontal indent
+\r 	carriage return
+
+ARITHMETIC OPERATORS
++	addition (sum)
+-	subtraction (difference)
+*	multiplication (product)
+/	division (quotient)
+% 	modulus (remainder)
+
+RELATIONAL OPERATORS
+= =	equal
+<	less than
+>	greater than
+<=	less than or equal to
+>=	greater than or equal to
+!=	not equal
+
+LOGICAL OPERATORS
+&&	expression1&&expression2	both 1 & 2 TRUE
+||	expression1||expression2	either or both TRUE
+!	!expression1		!expression1 is true if expression1	is currently false and vise versa	
+

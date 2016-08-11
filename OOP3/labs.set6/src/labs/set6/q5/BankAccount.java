@@ -1,0 +1,56 @@
+package labs.set6.q5;
+
+/** models a bank account
+ */
+public class BankAccount{
+	private String accNum;
+	private double balance;
+	BankAccount bankAccount;
+	
+	
+	public BankAccount() {
+		accNum = "";
+		balance = 0.0;
+	}
+	public BankAccount(BankAccount bAccount) {
+		bankAccount = new BankAccount(bAccount);
+	}
+	public BankAccount(String aNum, double bal) {
+		accNum = aNum;
+		balance = bal;
+	}
+	
+	public String getAccNum(){ return accNum;	}
+	public double getBalance(){ return balance;	}
+	
+	/** set the account number
+	 @param accNum the account number as a String
+	 **/
+	public void setAccNum(String accNum){
+		this.accNum = accNum;
+	}
+	
+	/** lodge any positive amount to the account
+	 @param amount the amount to be lodged
+	 */
+	public void lodge(double amount){
+	  if (amount >0)
+		balance += amount;
+	}
+	
+	/** withdraw anything up to the amount in the account
+	 *@param amount the amount to be withdrawn
+	 */
+	public void withdraw(double amount){
+		if (amount <=balance){
+			balance -= amount;
+		}
+	}
+
+	/** gives a String representation of the object
+	 @return the class name as well as the account number and the balance
+	 */
+	public String toString() {
+		return "Number: " + getAccNum() + ", Balance: " + getBalance();
+	}
+}

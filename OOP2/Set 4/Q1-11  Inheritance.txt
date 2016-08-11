@@ -1,0 +1,149 @@
+Inheritance
+
+Q1
+Inheritance discribes a relationship between two 
+classes when one or more is dependant on another.
+The sub class inherits variables and methods(data 
+and behaviour) from the super class.
+eg. if pet is the super class
+       Horse, dog, cat would be the sub clases
+       Connemara, Shire, Shetland would be sub classes of the horse class
+       Wolf Hound, Collie, Setter would be sub classes of the dog class
+       Persian, Tabby would be sub classes of the horse class
+
+Q2 (i)	Vehicle is the base class
+   (ii) Car and Bicycle are the derived classes
+
+Q3 (i)  Base Class = Super Class
+   (ii) Derived Class = Sub Class 
+
+Q4 In the absence of explicit inheritance from a 
+   superclass, the class implicit inheritance comes 
+   from java.lang.Object.
+   i.e. public class implicitly inherits from java.lang.Object
+
+Q5 Package access
+   import book.ScienceFictionBook;
+   public class ScienceFictionBook { code }
+
+   Super-Sub 
+   public class ScienceFictionBook extends Book { code }
+
+Q6 (i)   The base class is Person.java
+
+   (ii)  The sub class, Student.java is the derived class
+
+   (iii) The student class derives the details about the 
+	 person form the super class Person.java, the
+	 line of code is: super();
+	 Yes code: new Person(name,age,gender);
+	 constructors are also inherited.
+
+   (iv)  The program will compile even if they are not the same type but when 
+	 you run the driver program if they are the same variable type the 
+	 program will compile but when you run it the wrong infomation will be 
+	 put in the wrong place. If they are different variable types the 
+	 program will throw errors.
+
+   (v)	 This reference to super is calling on inheritance from the Person program
+	 to Person(String name, int age, char gender) {
+				setName(name);
+				setAge(age);
+				setGender(gender);
+   	 error: call to super must be first statement in constructor
+	 call to super must be first.
+
+   (vi)  It doesn't need them because it can inherit them from the Person Class.
+
+   (vii) When running the driver if you call the toString method the toString()method 
+	 defined in the Student class overrides the toString() defined in the Person 
+	 class, this is because methods called in a program come from the program one 
+	 step up in the heirarchy. This is what it means by 'overriding'. The toString 
+	 Method for the Person Class can be called by super.toString()
+
+ 
+Q7 (i)	 //Amending s2 name to Micheal Caine
+	 s2.setName("Micheal Caine");
+	 JOptionPane.showMessageDialog(null,"New Name s2: " + s2.getName());
+		
+	 //Now display new name and age
+	 JOptionPane.showMessageDialog(null,"Name & Age s2: " + s2.getName() + 
+				       ", " + s2.getAge()); 
+
+ 		                               
+   (ii)  Done
+
+   (iii) VOPC Diagram
+
+	  _________________________________________
+	 |
+	 |	StudentTest
+	 |_________________________________________
+	 |
+	 |	+ main(String[] args): void
+	 |
+	 |_________________________________________
+
+
+	 See word document
+
+Q8	 A user will do something, for example click on a button, the button objects
+	 will make an event happen, which is the passed to the event handler object,
+	 the handler in turn will do something like open a message box.
+
+
+Q9	 javax.swing.text.JTextComponent is the base class for the JTextField class
+
+
+Q10 (i)	 The package containing JButton is javax.swing
+    (ii) javax.swing.AbstractButton is the immediate superclass of JButton
+    (iii)JButton implements Accessible Interface
+    (iv) BasicArrowButton, MetalComboBoxButton derives from the JButton class
+    (v)  Returns the button's text. Returns: the buttons text
+    (vi) One: AccessibleContext
+    (vii)java.lang.Object is top of the hierarchy it belongs to javax.swing
+    (viii)There are 5 constructors are defined as part of the JButton class
+    (xi) updateUI overrides updateUI in class AbstractButton
+    (x)  action is inherited from class java.awt.Component
+    (xi) The 5 classes JButton derives fields and methods from are; AbstractButton, 
+	 JComponent, Component, SwingConstants and ImageObserver
+    (xii)public abstract class AbstractButton Abstract in tnhe header means it 
+	 doesn't create an instance of an object.
+
+
+Q11 (i)  javax.swing  is needed for the JFrame elements of the program
+    (ii) java.awt.event  is needed for the WindowEventHandler
+    (iii)JFrame is the base class ClosingWindow1 is the derived class
+    (iv) super() in the constructor is a call to the base class to set the title for 
+	 the frame. The program still compiles and runs but has no Title in the JFrame.
+    (v)	 The setSize() method sets the interior size of the window. The program still 
+	 compiles and runs but will collapse to the title bar and outline.
+    (vi) The setVisible(true) method makes the JFrame Windows visible. The program 
+	 still compiles and runs but nothing will be seen on the screen.
+    (vii)The addWindowListener(new WindowEventHandler()) listens out for the close 
+	 button, it is need to set the chain of events that will lead to the next 
+	 window being opened.
+    (viii)We need the private inner class called WindowEventHandler that overrides 
+	 the default operation for the windowClosing() method because other wise
+	 the window would just close and the next would not open. As we want the 
+	 second window to open when the first closes we have overriden it.
+    (ix) WindowAdapter methods  windowActivated(WindowEvent e)
+				windowClosed(WindowEvent e)
+				windowClosing(WindowEvent e)
+				windowDeactivated(WindowEvent e)
+	
+	 interfaces it implements  WindowFocusListener, WindowListener, 
+				   WindowStateListener, EventListener
+	
+    (x)  It doesn't make any difference whether WindowEventHandler is private or 
+	 public because it is being called in ClosingWindow1. When it is private it
+	 would not be available outside this class.
+    (xi) If the WindowListener is interface is implemented all the methods need to 
+	 be written, when we inherit from Window Adaptor we are accessing pre written
+	 ones.
+    (xii)If the driver for ClosingWindow1 is in a seperate file it would work fine.
+    (xiii) The object is e of the type WindowEvent created by the method 
+	 windowClosing()   
+    (xiv)setTitle("This is a JFrame window");    
+
+

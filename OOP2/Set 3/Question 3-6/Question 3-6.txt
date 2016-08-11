@@ -1,0 +1,9 @@
+Q3 A folder is created and WeightPackage class is saved into it 
+     because of the first line of code:-
+     package weightpackage;
+
+Q4 You can't put the import statement before the package code
+      it causes an error - interface, or enum expected.
+
+Q6 It needed the correct path in oder to see it.
+

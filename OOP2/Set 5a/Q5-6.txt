@@ -1,0 +1,27 @@
+Q5     
+(i)     When you enter a name and press return the name appears in the title bar 
+         saying you entered it.
+(ii)    When you enter a name and press OK in the title bar it says you clicked OK.
+(iii)   When you enter a name and press cancel in the title bar it says you clicked 
+         cancel.
+(iv)   5 GUI objects are declared. Yes.
+(v)    A text field is a dialog box you can type into,  a label is text which appears 
+        straight in the frame.
+(vi)   ActionListener is disabled so the inputLine, your name, is not put in the menu
+        bar when you hit return.
+(vii)  The program still works the same when all the cpane.add(   statements are 
+        put at the end of the constructor. When the order of them is changed the 
+        program still works but the GUI objects are reordered also. When they are 
+        put at the top of the constructor the program won't compile. This is 
+        because  the objects must be created before they can be added.
+(viii) It gets the source object. (e.getSource().equals(okButton)) works just as 
+        well.
+
+Q6.
+(i)     Dot notation is not needed because these methods are called on an object 
+        created in the main method,  setBackground() has the dot notation because 
+        it is being called on the contentPane object in this constructor method.
+        The title will appear in the menu bar and the background pane will be blue.
+(ii)    The title will appear in the menu bar and the background pane will be blue, 
+         a button is added and positioned absolutely.
+ 

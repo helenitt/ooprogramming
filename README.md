@@ -1,2 +1,0 @@
-# ooprogramming
-OOP Course Work

@@ -67,6 +67,7 @@ public class PacmanApp extends JFrame {
 			jta.setText("");
 			message += p1.toString();
 			jta.append(message);
+			JOptionPane.showMessageDialog(null, message);
 		}   
 	}
 }

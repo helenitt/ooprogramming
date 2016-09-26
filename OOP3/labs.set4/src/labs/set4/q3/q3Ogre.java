@@ -1,4 +1,4 @@
-package labs.set4.q3;
+ package labs.set4.q3;
 
 public class q3Ogre implements q3Enemy {
 	private int size;

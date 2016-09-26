@@ -1,0 +1,45 @@
+//Assess1Group1Solution.java
+/*This program reads in the first name and surname of a person and performs
+ *a number of tests on them*/
+
+import java.util.Scanner;
+
+public class Assess1Group1Solution{
+	public static void main(String args[])
+		{
+			String firstName,surname;
+			char firstInitial,lastInitial;
+			
+			Scanner input = new Scanner(System.in);
+			
+			System.out.println("\n\n****************************************\n" +
+            	               String.format("%25s","Name Tester") +
+            	               "\n****************************************\n\n");
+			
+            System.out.print("Please enter the first name: ");
+            firstName = input.nextLine();
+            
+            System.out.print("Please enter the surname: ");
+            surname = input.nextLine();
+            
+            firstInitial =  firstName.charAt(0);
+			lastInitial = surname.charAt(0);
+			       	    
+			if(firstName.toLowerCase().equals("patrick"))
+				if(lastInitial == 'K')
+					System.out.println("\n\nYour first name was \"Patrick\" and your surname begins with a 'K'");
+				else
+					System.out.println("\n\nYour first name was \"Patrick\" but your surname does not begin with a 'K'");
+			else
+				System.out.println("\n\nYour first name was not \"Patrick\" so we didn't bother testing the surname");
+			
+			
+			System.out.print("\nYour initials are " + firstInitial + "." + lastInitial + ". so ");
+			
+			if(firstInitial==lastInitial)
+				System.out.println("your initials are the same");
+			else
+				System.out.println("your initials are different");			
+		}
+}
+

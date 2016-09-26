@@ -1,0 +1,69 @@
+//Assess2Group4Solution.java
+/*This program reads in a user-supplied piece of text and then displays a set of menu options
+ *which can be used to analyse the text in different ways*/
+
+import java.util.Scanner;
+
+public class Assess2Group4Solution{
+	public static void main(String args[])
+		{
+			String text,choice,ingFound="";
+			int i=0,dCount=0,wordCount=0;
+			
+			Scanner input = new Scanner(System.in);
+					
+			System.out.print("Please enter a piece of text: ");
+            text = input.nextLine();
+            
+            System.out.println("\n\nYou can now analyse the text as follows:" +
+            	             "\n\n\tA. Display the number of characters in the piece of text" +
+            	             "\n\tB. Display the first and last character in the piece of text" +
+            	             "\n\tC. Display the number of times lowercase 'd' appears in the text" +
+            	             "\n\tD. Determine if the sequence of characters \"ing\" appears in the text\n\n");
+            	             
+            System.out.print("Please enter your choice: ");
+            choice = input.nextLine();
+            
+            switch(choice)
+	            {
+	            	case "A":
+	            		System.out.println("\nThe number of characters in the piece of text is " + text.length());
+	            		break;
+	            		
+	            	case "B":
+	            		System.out.println("\nThe first character is '" + text.charAt(0) + "' and the last character is '" 
+	            			               + text.charAt(text.length()-1) + "'");
+	            	    break;
+	            	    
+	            	case "C":
+	            		while(i<text.length())
+	            			{
+		            			if(text.charAt(i)=='d')
+		            				dCount++;
+		            				
+		            			i++;
+	            			}
+	            				
+	            		System.out.println("\nThe character 'd' appears in the text " + dCount + " times");
+	            		break;
+	            		
+	            	case "D":
+	            		while(i<text.length()-2)
+	            			{
+		            			if(text.charAt(i)=='i' && text.charAt(i+1)=='n' && text.charAt(i+2)=='g')
+		            				{
+		            					ingFound="yes";
+		            					break;
+		            				}	
+		            						
+		            			i++;
+	            			}
+	            			
+	            		if(ingFound.equals("yes"))
+	            			System.out.println("\nThe sequence of characters \"ing\" appears in the text");
+	            		else
+	            			System.out.println("\nThe sequence of characters \"ing\" does not appear in the text");   		    		
+	            }			
+		}
+}
+

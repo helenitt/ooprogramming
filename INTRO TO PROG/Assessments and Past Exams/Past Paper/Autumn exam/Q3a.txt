@@ -1,0 +1,49 @@
+//Q3a.java
+/*This program reads in a sentence terminated by a full-stop and uses a data-sentinel controlled while
+ *loop to determine some facts about the sentence*/
+
+import java.util.Scanner;
+
+public class Q3a {
+	public static void main(String args[])
+		{	
+			String sentence;				
+			int eCount=0,letters=0,words=0,index=0;
+			char ch;
+			
+			Scanner input = new Scanner(System.in);
+			
+			System.out.print("Please enter a sentence, terminated with a full-stop:\n\n");
+			sentence = input.nextLine();
+			
+			sentence = sentence.toLowerCase();
+			ch = sentence.charAt(0);
+			
+			while(ch != '.')
+				{
+					if(ch>='a'&& ch<='z')
+						letters++;
+					
+					if(ch == 'e')
+						eCount++;
+						
+					if(ch == ' ')
+						words++;
+					
+						
+					index++;
+					
+					ch = sentence.charAt(index);	
+				}
+	
+			System.out.println("\n\nNumber of characters in the sentence: " + sentence.length() + 
+				               "\nNumber of letters in the sentence: " + letters +
+				               "\nNumber of words in the sentence: " + (words+1) +
+				               "\nPercentage of lowercase/uppercase 'e': " + 
+				               	String.format("%.2f",(float)eCount/sentence.length()*100) + "%");
+				
+		}
+}	
+
+
+

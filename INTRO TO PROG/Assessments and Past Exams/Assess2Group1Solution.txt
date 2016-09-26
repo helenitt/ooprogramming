@@ -1,0 +1,63 @@
+//Assess2Group1Solution.java
+/*This program reads in a user-supplied password and determines whether or not it is valid. If it is not
+ *valid it reports back the reasons why it failed*/
+
+import java.util.Scanner;
+
+public class Assess2Group1Solution{
+	public static void main(String args[])
+		{
+			String password, errorList="";
+			char ch;
+			int index=0,digits=0,uppercase=0,lowercase=0,symbols=0;
+			
+			Scanner input = new Scanner(System.in);
+			
+			System.out.println("*******************************\n" +
+    	         			   "\tPassword Analyser\n" +
+    	         			   "*******************************\n\n");
+			
+            System.out.print("Please enter a password: ");
+            password = input.nextLine();
+            
+            if(password.length()<8 || password.length()>13)
+            	errorList+="Password was not between 8 and 13 characters long\n";
+            	
+            
+            while(index<password.length())
+	            {
+	            	ch = password.charAt(index);
+	            	
+	            	if(ch>='0'&&ch<='9')
+	            		digits++;
+	            	else if(ch>='A'&&ch<='Z')
+	            		uppercase++;
+	            	else if(ch>='a'&&ch<='z')
+	            		lowercase++;
+	            	else
+	            		symbols++;
+
+	            	index++;
+	            }
+	            
+	        if(digits<2)
+	        	errorList+="Password did not contain at least 2 digits\n";
+	        	
+	        if(uppercase<1)
+	        	errorList+="Password did not contain at least 1 uppercase letter\n";
+	        	
+	        if(lowercase<3)
+	        	errorList+="Password did not contain at least 3 lowercase letters\n";
+	        	
+	        if(symbols>0)
+	        	errorList+="Password contained at least one illegal character\n";
+            
+   
+            if(errorList.equals(""))
+            	System.out.println("\n\nYou entered a perfectly valid password");
+            else
+            	System.out.println("\n\nYour password was invalid for the following reasons:\n\n" + errorList);
+           				
+		}
+}
+

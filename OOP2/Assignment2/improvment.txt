@@ -1,0 +1,11 @@
+while(ranNumQNum == "") { 
+	ranNumQNum++;
+	if (ranNumQNum  == lenth of question array)
+		ranNumQNum =1;
+}
+
+while(ranNum2 == ranNum1) { }
+
+while(ranNum3 == ranNum1 || ranNum3 == ranNum2) { }
+
+The problem with autoincement

@@ -1,0 +1,56 @@
+//ProblemSolving9IntegerValidation.java
+/*Program that attempts to validate a user-supplied value to determine whether it is a proper
+ *integer value*/
+
+
+import java.util.Scanner;
+
+public class ProblemSolving9IntegerValidation{
+	public static void main(String args[])
+	{
+		String userValue;
+		int numChars=0,index;
+		boolean valid = false;
+		char character;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Please enter a value: ");
+		userValue = input.nextLine();
+		
+	
+		numChars = userValue.length();   // determine the number of characters in the value entered
+	    character = userValue.charAt(0); // extract the 1st character
+	
+	    if(character=='-' || Character.isDigit(character)) //check to see if the first character is a minus 
+	                                                       //character or a digit
+	    {
+	    	// the following loop will keep going as long as there are more characters in the value
+		    // entered to process and each character lies in the ASCII range 0-9
+		    
+		    for(index=1;index < numChars;index++)
+		    {
+		    	character = userValue.charAt(index); //extract the next character
+		    	if(!Character.isDigit(character))
+		    		break;    
+		    }
+		    
+			// if it turns out that the value of variable index matches the number of characters in the
+		    // value then we can be certain that the value must be an integer
+		    
+		    if (index == numChars)
+		        System.out.println("\nYou have entered a valid integer");    
+		    else
+	    		System.out.print("What you entered does not constitute a valid integer!");
+		
+		}
+		else
+    		System.out.print("What you entered does not constitute a valid integer!");
+
+				    
+			   					
+		System.out.println("\n\n\n");
+				                 		
+	}
+}
+

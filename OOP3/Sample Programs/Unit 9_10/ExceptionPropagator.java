@@ -1,0 +1,50 @@
+import java.util.*;
+/** demonstrates exceptions being propagated back thru the method call stack */
+public class ExceptionPropagator {
+    /** main invokes method A, which catches exceptions,  then method B, which doesn't: 
+     * main will catch any exceptions that make their way back to it
+     */
+    public static void main(String [] args) {
+	  try {
+	  	System.out.println("in main, about to execute method A");
+	    A();
+	    System.out.println("\nMain now about to invoke method B");
+	    B();
+	    System.out.println("\nMain Finished");
+	  } 
+	  catch (Exception e) {
+	    System.out.println("in catch block of main... ");
+	    System.out.println(e);
+	  }
+    } // end main
+
+    /** method A is a method catcher, not a thrower or a propagator 
+     *  it invokes method B
+     */
+    public static void A()throws Exception {
+	  try {
+	  	System.out.println("\nIn A, about to invoke method B");
+	    B();
+	    System.out.println("\nA successfully completed");
+	  } 
+	  catch (Exception e) {
+	    System.out.println("in catch block of A...");
+	    System.out.println(e);
+	 }
+    }// end A
+
+    /** method B just passes control to C: it neither catches nor explicitly throws,
+     *  but it does propagate backwards anything thrown back to it by C
+     */
+    public static void B()throws Exception {
+      System.out.println("\nIn B, about to invoke method C");
+	  C();
+	  System.out.println("B successfully completed");
+    } // end B
+
+    /** C is a thrower of exceptions, containing a 'personalised' message */
+    public static void C() throws Exception {
+       System.out.println("\nNow executing method C");
+	   throw new Exception("C is exceptional");
+    } // end C
+} // end class

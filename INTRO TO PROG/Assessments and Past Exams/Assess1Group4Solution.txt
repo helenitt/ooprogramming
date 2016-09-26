@@ -1,0 +1,43 @@
+//Assess1Group4Solution.java
+/*This program determines the volume of a bucket, provided that the larger and smaller radii are both
+ *valid values*/
+
+import java.util.Scanner;
+
+public class Assess1Group4Solution{
+	public static void main(String args[])
+		{
+			float R,r,h,V;
+			final float PI = 3.142f;
+	
+			Scanner input = new Scanner(System.in);
+			
+			System.out.println("====================================\n" +
+				               "\tBucket Volume Calculator\n" +
+				               "====================================\n\n");
+
+            System.out.print("Please enter the larger radius of the bucket: ");
+            R = input.nextFloat();
+               
+            if(R<=0)
+            	System.out.println("\nError: invalid larger radius value ... exiting program");
+            else
+	            {
+	            	System.out.print("\nPlease enter the smaller radius of the bucket: ");
+            		r = input.nextFloat();
+            		
+            		if(r<=0)
+	            		System.out.println("\nError: invalid smaller radius value ... exiting program");
+	            	else
+		            	{
+		            		System.out.print("\nPlease enter the height of the bucket: ");
+            				h = input.nextFloat();
+            				
+            				V = (1/3f)*PI*h*(R*R + r*R + r*r);
+            				
+            				System.out.println("\n\nThe volume of the bucket is " + String.format("%.0f",V) + "m" + (char)252);
+		            	}
+	            }		
+		}
+}
+

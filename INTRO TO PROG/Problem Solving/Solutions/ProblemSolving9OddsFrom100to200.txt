@@ -1,0 +1,24 @@
+//ProblemSolving9OddsFrom100to200.java
+/*Program that determines and displays all the odd numbers between 100 to 200*/
+
+
+import java.util.Scanner;
+
+public class ProblemSolving9OddsFrom100to200{
+	public static void main(String args[])
+	{
+		int number;
+		
+	
+	    for(number=100;number<=200;number++)
+	    	if(number%2!=0)
+	    		System.out.print(number + " ");
+	   
+
+				    
+			   					
+		System.out.println("\n\n\n");
+				                 		
+	}
+}
+

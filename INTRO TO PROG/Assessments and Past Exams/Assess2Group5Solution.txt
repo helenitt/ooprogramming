@@ -1,0 +1,64 @@
+//Assess2Group5Solution.java
+/*This program reads in exactly 5 t-numbers and validates each one. The reason for failure for any
+ *invalid t-number is reported and then some stats based on the t-numbers entered are displayed*/
+
+import java.util.Scanner;
+
+public class Assess2Group5Solution{
+	public static void main(String args[])
+		{
+			int valid=0,invalidNumChars=0,numProcessed=1,i=1,digits=0;
+			String tNumber, validTNumbers="";
+			
+			Scanner input = new Scanner(System.in);
+			
+			do{
+				System.out.print("Please enter t-number for student " + numProcessed + ": ");
+            	tNumber = input.nextLine();
+            	
+            	if(tNumber.length()==9)
+	            	{
+	            		if(tNumber.toLowerCase().charAt(0)=='t')
+		            		{
+		            			while(i<tNumber.length())
+			            			{
+			            				if(tNumber.charAt(i)>='0' && tNumber.charAt(i)<='9')
+			            					digits++;
+			            					
+			            				i++;
+			            			}
+			            		
+			            		if(digits==8)
+			            			{
+			            				System.out.println("This t-number is valid!");
+			            				validTNumbers += tNumber + " ";
+			            				valid++;
+			            			}
+			            		else
+			            			System.out.println("Invalid t-number! The last 8 characters are not all digits");
+		            		}
+		            	else
+		            		System.out.println("Invalid t-number! Doesn't begin with a 't' or 'T'");
+	            	}
+	            else
+	            	{
+	            		System.out.println("Invalid t-number! Doesn't contain exactly 9 characters.");
+	            		invalidNumChars++;
+	            	}
+	            
+	            numProcessed++;
+	            i=1;
+	            digits=0;					
+	            System.out.println("\n\n");
+	            	
+			}while(numProcessed<=8);
+					
+			System.out.println("\n\n****************************\n" +
+				               "\tT-number Stats\n" +
+				               "****************************\n\n" +
+				               "\nThe number of valid t-numbers entered is " + valid +
+				               "\nThe number of invalid t-numbers due to an incorrect number of characters is " + invalidNumChars + 
+				               "\nThe list of valid t-numbers is " + validTNumbers); 			
+		}
+}
+

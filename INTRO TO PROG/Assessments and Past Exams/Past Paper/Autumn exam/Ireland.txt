@@ -1,0 +1,27 @@
+//Ireland.java
+/*This program initialises the values of a number variables concerning the country Ireland and displays some
+ *results in a formatted fashion*/
+
+public class Ireland {
+	public static void main(String args[])
+		{					
+			String name = "Ireland", capital = "Dublin";
+			int population = 6399115;
+			float area = 84421.56f;
+				
+			System.out.println("\t*************************************\n" +
+				               "\t\tSome details for a country\n" +
+				               "\t*************************************\n\n" +
+				               String.format("%-15s%s\n%-15s%s\n%-15s%d\n%-15s%.2f km" + (char)253,
+				               "Name:",name,"Capital:",capital,"Population:",population,
+				               "Area:",area) +
+				               "\n\n\"May those who love us, love us." +
+						       "\nFor those who don't love us,\nMay God turn their hearts." + 
+							   "\nAnd if God can't turn their hearts,\nMay he turn their ankles " +
+							   "\nso we'll know them by their limping!\"" +
+				               "\n\n\t\t\tAn Old Irish Proverb");		
+		 }
+}	
+
+
+

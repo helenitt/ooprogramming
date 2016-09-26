@@ -1,0 +1,29 @@
+//Q4b.java
+/*This program uses a for loop to determine whether or not a user-supplied positive whole number is prime*/
+
+import java.util.Scanner;
+
+public class Q4b {
+	public static void main(String args[])
+		{					
+			int i=0,number,divisors=0;
+			
+			Scanner input = new Scanner(System.in);
+				
+			System.out.print("Please enter a positive whole number: ");
+			number = input.nextInt();
+
+			for(i=2;i<number;i++)	
+				if(number%i == 0)
+					divisors++;
+						
+			if(divisors>0 || number == 1)
+				System.out.println("\n" + number + " is not a prime number");
+			else
+				System.out.println("\n" + number + " is a prime number");
+								
+		}
+}	
+
+
+

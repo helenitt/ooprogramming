@@ -1,0 +1,62 @@
+//Assess2Group2Solution.java
+/*This program reads in the decimal odds given by 5 bookmakers for a horse running the
+ *Grand National and determines some results based on the values provided*/
+
+import java.util.Scanner;
+
+public class Assess2Group2Solution{
+	public static void main(String args[])
+		{
+			String bookmaker, bookieHighestOdds="";
+			float odds,totalOdds=0,highestOdds=0,chanceOfWinning,averageOdds;
+			int numProcessed=1;
+				
+			Scanner input = new Scanner(System.in);
+			
+			while(numProcessed<=5)
+				{
+					System.out.print("Loop " + numProcessed + " - Please enter the bookmaker name: ");
+            		bookmaker = input.nextLine();
+            		System.out.print("Loop " + numProcessed + " - Please enter the bookmaker odds: ");
+            		odds = input.nextFloat();
+            		
+            		while(odds<1.01 || odds>1000)
+	            		{
+	            			System.out.print("Loop " + numProcessed + " - Invalid Odds entered!!! Please re-enter the bookmaker odds: ");
+            				odds = input.nextFloat();
+	            		}
+            	
+            	    totalOdds+=odds;
+            	    
+            	    if(numProcessed==1)
+	            	    {
+	            	    	bookieHighestOdds = bookmaker;
+	            	    	highestOdds = odds;
+	            	    }
+	            	else if(odds>highestOdds)
+		            	{
+		            		bookieHighestOdds = bookmaker;
+	            	    	highestOdds = odds;
+		            	}
+		
+					input.nextLine();
+					numProcessed++;
+					
+					System.out.println("\n\n");
+				}
+
+            averageOdds = totalOdds/5;
+            chanceOfWinning = 1/averageOdds*100;
+               
+            
+	        System.out.println("\n\n==================================\n" +
+            	               "\tProgram Results\n" +
+            	               "==================================\n\n");
+            	               	
+			System.out.println("Bookmaker with the highest decimal odds: " + bookieHighestOdds +
+					           "\nAverage decimal odds: " + String.format("%.2f",averageOdds) +
+					           "\nChance of horse winning: " + String.format("%.0f",chanceOfWinning) + "%");
+					                      			
+		}
+}
+

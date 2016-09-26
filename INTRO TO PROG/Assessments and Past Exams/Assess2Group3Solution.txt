@@ -1,0 +1,59 @@
+//Assess2Group3Solution.java
+/*This program reads in an arbitrary number of country names and determines a number of pieces
+ *of information about them*/
+
+import java.util.Scanner;
+
+public class Assess2Group3Solution{
+	public static void main(String args[])
+		{
+			String country,shortest="",atLeast2es="";
+			char ch;
+			int i=0,between10And15=0,beginWithN=0,j=0,eCount=0;
+			
+			Scanner input = new Scanner(System.in);
+			
+			do{
+				 System.out.print("Please enter a country name: ");
+            	 country = input.nextLine();
+            	 
+            	 if(i==0)
+            		shortest = country;
+            	 else if(country.length()<shortest.length() && !country.equals("x"))
+            	 	shortest=country;
+            	 
+            	 if(country.length()>=10 && country.length()<=15)
+            	 	between10And15++;
+            	 	
+            	 if(country.charAt(0)=='N')
+            	 	beginWithN++;
+            	 
+            	 while(j<country.length())
+	            	 {
+	            	 	if(country.charAt(j)=='e' || country.charAt(j)=='E')
+	            	 		eCount++;
+	            	 	j++;
+	            	 }
+            	 		
+            	 if(eCount>=2)
+            	 	atLeast2es+=country + " ";
+            	 
+            	 i++;
+            	 
+            	 j=0;
+            	 eCount=0;
+			}while(!country.equals("x"));
+			
+			if(i==1)
+				System.out.print("\n\nYou entered no country names .... thanks for using the program\n\n");
+			else
+				System.out.print("\n\n\n\t\t-------Country Statistics------" +
+					             "\n\nNumber of countries entered: " + (i-1) +
+					             "\nCountry with shortest name: " + shortest +
+					             "\n% of countries with between 10 and 15 characters inclusive: " + 
+					             	   String.format("%.2f",(float)between10And15/(i-1)*100) + "%" +
+					             "\nNumber of countries beginning with 'N': " +  beginWithN +
+					             "\nList of countries containing at least 2 'e'/'E' characters: " + atLeast2es + "\n\n");				             		
+		}
+}
+

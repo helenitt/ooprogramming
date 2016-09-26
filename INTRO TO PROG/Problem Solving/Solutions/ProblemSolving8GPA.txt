@@ -1,0 +1,56 @@
+//ProblemSolving8GPA.java
+/*Program that processes a number of student GPAs and keeps track
+ *of the highest GPA, the student with the highest GPA and the
+ *course of the student that had the highest GPA*/
+
+import java.util.Scanner;
+
+public class ProblemSolving8GPA{
+	public static void main(String args[])
+	{
+		float GPA,highestGPA=0;
+		String name,course,courseHighestGPA="",nameHighestGPA="";
+		int i=1;
+		char choice;
+		
+		Scanner input = new Scanner(System.in);
+			
+		do{
+			System.out.print("Please enter name of student " + i + ": ");
+			name = input.nextLine();
+			
+			System.out.print("Please enter course of student " + i + ": ");
+			course = input.nextLine();
+			
+			System.out.print("Please enter GPA of student " + i + ": ");
+			GPA = input.nextFloat();
+		
+			if(i == 1)
+				{
+					nameHighestGPA = name;
+					courseHighestGPA = course;
+					highestGPA = GPA;	
+				}
+			else if(GPA>highestGPA)
+				{
+					nameHighestGPA = name;
+					courseHighestGPA = course;
+					highestGPA = GPA;	
+				}
+			
+			System.out.print("\n\nDo you wish to enter more details (y/n)? ");
+			input.nextLine();
+			choice = input.nextLine().charAt(0);
+			
+			System.out.println("\n\n");
+			i++;
+			
+		}while(choice != 'n');
+		
+		
+		System.out.println("\n\nThe name of the student with the highest GPA: " + nameHighestGPA + 
+			               "\nThe course of the student with the highest GPA: " + courseHighestGPA +
+			               "\nThe highest GPA: " + highestGPA);		                 		
+	}
+}
+

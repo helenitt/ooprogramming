@@ -1,0 +1,38 @@
+//Q4a.java
+/*This program uses a counter-controlled do-while loop to determine whether a user-supplied value
+ *constitutes a positive whole number and, if so, whether that number is odd or even*/
+
+import java.util.Scanner;
+
+public class Q4a {
+	public static void main(String args[])
+		{					
+			String number;
+			char ch;
+			int i=0;
+			
+			Scanner input = new Scanner(System.in);
+			
+			System.out.print("Please enter a positive whole number: ");
+			number = input.nextLine();
+			
+			do{
+				
+				ch = number.charAt(i);
+				
+				if(ch>='0' && ch<='9')		
+                	i++;
+                else
+                	break;
+			}while(i<number.length());
+			
+			if(i==number.length())
+                System.out.println("\nThe value entered is a positive whole number");
+            else
+            	System.out.println("\nThe value entered is not a positive whole number");			
+			
+		}
+}	
+
+
+

@@ -1,0 +1,42 @@
+//Assess1Group2Solution.java
+/*This program determines the nature of an angle based on a user-supplied value. It also
+ *displays the equivalent value of the angle in radians for valid angles*/
+
+import java.util.Scanner;
+
+public class Assess1Group2Solution{
+	public static void main(String args[])
+		{
+			float degrees, radians;
+		
+			Scanner input = new Scanner(System.in);
+			
+			System.out.println("\t\t------------Angle Tester and Converter------------\n\n");
+
+            System.out.print("Please enter the angle in degrees: ");
+            degrees = input.nextFloat();
+            
+            if(degrees<0)
+            	System.out.println("\nError! Invalid angle has been entered .... now quitting program");
+            else if(degrees>360)
+	            System.out.println("\nError! Invalid angle has been entered .... now quitting program");
+	        else
+	        	{
+	         		if(degrees<90)
+	         			System.out.print("\nThis is an acute angle");
+	         		else if(degrees==90)
+	         			System.out.print("\nThis is a right angle");
+	         		else if(degrees<180)
+	         			System.out.print("\nThis is an obtuse angle");
+	         		else if(degrees==180)
+	         			System.out.print("\nThis is a straight angle");
+	         		else 
+	         			System.out.print("\nThis is a reflex angle");
+
+	            	radians = 2*3.142f*degrees/360;
+	            	
+	            	System.out.println(" and the angle in radians is " + String.format("%.2f",radians));
+	            }
+		}
+}
+

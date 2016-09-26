@@ -1,0 +1,24 @@
+//ProblemSolving7SumOfSquares.java
+/*Program that attempts to determine the term in the series sqr(1) + sqr(2) + sqr(3) + ....
+ that first puts the sum of the series over 1000 and the sum at that stage*/
+
+
+public class ProblemSolving7SumOfSquares{
+	public static void main(String args[])
+	{
+		int sum=0,term=0;
+		
+		while (sum <= 1000)
+		{
+			term = term + 1;
+			sum = sum + term*term;   	
+		}
+    
+		System.out.println("The term that first puts the series over 1000 is term " + term + " squared" + 
+		                   "\nThe sum of the series at this stage is " + sum);
+				
+		System.out.println("\n\n\n");
+				                 		
+	}
+}
+

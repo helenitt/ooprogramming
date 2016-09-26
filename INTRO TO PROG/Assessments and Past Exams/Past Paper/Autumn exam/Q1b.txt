@@ -1,0 +1,32 @@
+//Q1b.java
+/*This program calculates and displays the volume of a bucket based on user-supplied
+ *radius and height values*/
+
+import java.util.Scanner;
+
+public class Q1b {
+	public static void main(String args[])
+		{					
+			float largerRadius,height,smallerRadius,volume;
+			final float PI = 3.142f;
+			
+			Scanner input = new Scanner(System.in);
+				
+			System.out.print("Please enter the larger radius of the bucket: ");
+			largerRadius = input.nextFloat();
+			
+			System.out.print("Please enter the smaller radius of the bucket: ");
+			smallerRadius = input.nextFloat();
+			
+			System.out.print("Please enter the height of the cylinder: ");
+			height = input.nextFloat();
+			
+			volume = (1/3f)* PI * height * (largerRadius*largerRadius + largerRadius*smallerRadius + smallerRadius*smallerRadius);
+			
+			System.out.println("\n\nThe volume of the bucket is " + String.format("%.0f",volume) + 
+				               " cubed units");	
+		 }
+}	
+
+
+

@@ -15,35 +15,35 @@ public class Driver {
 		List<Employee> staff = new ArrayList<Employee>();
 		
 		while(fin.equals("n")) {
-			System.out.print("Is this a Manager: y/n ");
+			System.out.println("Is this a Manager: y/n ");
 			type = input.nextLine();
-			System.out.print("First Name: ");
+			System.out.println("First Name: ");
 			firstName = input.nextLine();
-			System.out.print("Last Name: ");
+			System.out.println("Last Name: ");
 			lastName = input.nextLine();
 			
 			if(type.equals("y")) {
-				System.out.print("Salary: ");
+				System.out.println("Salary: ");
 				salary = input.nextDouble();
 				input.nextLine();
 								
 				man = new Manager(firstName, lastName, salary);
 				staff.add(man);
 				
-				System.out.print("Finished? y/n: ");
+				System.out.println("Finished? y/n: ");
 				fin = input.nextLine();
 			}
 			else {
-				System.out.print("Hours: ");
+				System.out.println("Hours: ");
 				hours= input.nextDouble();
-				System.out.print("Hourly Rate: ");
+				System.out.println("Hourly Rate: ");
 				rate = input.nextDouble();
 				input.nextLine();
 				
 				hw = new HourlyWorker(firstName, lastName, hours, rate);
 				staff.add(hw);
 				
-				System.out.print("Finished? y/n: ");
+				System.out.println("Finished? y/n: ");
 				fin = input.nextLine();
 			}			
 		}
